@@ -8,9 +8,26 @@ namespace BoxApplication
 {
     class Box
     {
-        public double length;
-        public double breadth;
-        public double height;
+        public double Length;
+        public double Breadth;
+        public double Height;
+
+        public void setLength(double len)
+        {
+            Length = len;
+        }
+        public void setBreadth(double bre)
+        {
+            Breadth = bre;
+        }
+        public void setHeight(double hei)
+        {
+            Height = hei;
+        }
+        public double getVolume()
+        {
+            return Length * Breadth * Height;
+        }
     }
     class Boxtester
     {
@@ -19,22 +36,16 @@ namespace BoxApplication
             Box box1 = new Box();
             Box box2 = new Box();
 
-            double volume = 0.0;
+            box1.setLength(5.0);
+            box1.setBreadth(6.0);
+            box1.setHeight(7.0);
 
-            box1.length = 5.0;
-            box1.breadth = 6.0;
-            box1.height = 7.0;
+            box2.setLength(10.0);
+            box2.setBreadth(11.0);
+            box2.setHeight(12.0);
 
-            box2.length = 10.0;
-            box2.breadth = 11.0;
-            box2.height = 12.0;
-
-            volume = box1.length * box1.breadth * box1.height;
-            Console.WriteLine("box1's volume: {0}", volume);
-
-            volume = box2.length * box2.breadth * box2.height;
-            Console.WriteLine("box2's volume: {0}", volume);
-
+            Console.WriteLine("box1's volume: {0}", box1.getVolume());
+            Console.WriteLine("box2's volume: {0}", box2.getVolume());
             Console.ReadKey();
         }
     }
